@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\calculateController;
+use App\Http\Controllers\HelloController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -44,3 +45,5 @@ Route::controller(calculateController::class)->group(function () {
     Route::get('/sum/{a}/{b}', 'sum')->whereNumber(['a', 'b']);
     Route::get('/subtract/{a}/{b}', 'subtract')->whereNumber(['a', 'b']);
 });
+
+Route::get('/hello', [HelloController::class, 'welcome']);
